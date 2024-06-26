@@ -1,0 +1,636 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{caption} % Required for caption customization
+%Information to be included in the title page:
+\title{The Accomodation Revenue Problem  }
+\author[Team 1]{How to Increase the Revenue
+Generated Through Accommodation During Fests}
+\institute[]{Indian Institute of Technology Hyderabad}
+\date{02-05-2024}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+
+\begin{frame}
+\frametitle{Aim of the Project}
+\large Every year, during the college fest, our institute opens to the outsiders. People are invited to come and visit the campus and be a part of our fest. Some of these people chose to pay and stay in the institute guest house. This turns out to be a considerable source of revenue for the team organising the fest. \\
+\vspace{5mm}
+Our aim is to analyse the data and provide insights which can help increase the amount of people who stay in the campus. We are trying to achieve this through various hypothesis tests and analysing data plots. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Aim of the Project}
+The assumptions we have in mind before doing our analysis are:
+\begin{itemize}
+    \item People from farther away stay more than those who come from nearby.
+    \item People who are older generally tend to stay more as they are able to spend more and have more freedom than the younger ones
+    \item People who study in private colleges visit more than those who study in government colleges.
+\end{itemize}
+Our goal is to debunk or confirm these assumptions and probably gain some more insights into the data.
+\end{frame}
+
+\begin{frame}
+\frametitle{Data Collection and Parameters}
+The data was collected from a randomly selected group of 158 people who applied for accommodation during Elan and nVision 2024, through a survey.\\
+\vspace{5mm}
+The data parameters collected from the group were:
+\begin{itemize}
+    \item Residential Address
+    \item College/Institute and whether it is public or private
+    \item Age
+    \item The number of days they were staying
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Dataset}
+\begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{ok.png}
+    \captionof{figure}{First 5 rows of the data}
+    \label{fig:enter-label}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Central Tendencies}
+\begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{data.png}
+    \captionof{figure}{Central tendencies for data}
+    \label{fig:enter-label}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Introduction}
+\begin{block}{Abstract}
+This section presents an analysis of the effect of distance on people
+visiting the college fest. We conduct a hypothesis test to determine the mean distance
+that is traveled by those who participate in the fest
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Data visualisation}
+\begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{cri.png}
+    \captionof{figure}{Sample distance from college}
+    \label{fig:enter-label}
+\end{minipage}
+Can see that the sample is skewed
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Data visualisation}
+Verification of CLT for Sample\\
+\vspace{5mm}
+\begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{cri1.png}
+    \captionof{figure}{Visualisation of CLT for College Distance}
+    \label{fig:enter-label}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Data visualisation}
+Verification of CLT for Sample\\
+\vspace{5mm}
+\begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{cri2.png}
+    \captionof{figure}{Visualisation of CLT for Resident Distance}
+    \label{fig:enter-label}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Confidence Interval}
+\begin{block}{Confidence Interval}
+95\% Confidence Interval for Mean $(\mu)$ of Residential Distances: $(321.9755, 420.3409)$
+\end{block}
+\begin{block}{Confidence Interval}
+95\% Confidence Interval for Mean $(\mu)$ of College Distances: $(288.9673, 398.8684)$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Hypothesis Testing}
+\begin{block}{Hypothesis Test}
+Mean distance of attendees’ college is not $300$ km
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Hypothesis Testing : Null and Alternate Hypothesis}
+$$\text{Null Hypothesis}(H_0): \mu_0 = 300 $$
+$$\text{Alternate Hypothesis}(H_a): \mu_0 \neq 300$$  
+To test the hypothesis, we can use the two-tailed t-test. The test statistic is given by:
+\[ t^* = \frac{\bar{X} - \mu_0}{\frac{S}{\sqrt{n}}} \]
+
+where:
+\begin{itemize}
+    \item $\bar{X} = 343.917$; the Sample Mean 
+    \item $S = 341.739$; is the Sample Standard Deviations
+    \item $\mu_0 = 300$; the hypothesized mean 
+    \item $df = 150$; the Degree of Freedom
+    \item $\alpha = 0.05$; the confidence coefficient
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Hypothesis Testing : Calculation}
+\large Using the above formula, we get :
+
+\[ t^* = 1.579\]
+
+Also $|t_{\alpha/2, df}| = 1.975$
+
+Since $ |t^*| < |t_{\alpha/2, df}|$,
+\[\text{We fail to reject the null hypothesis.}\]
+
+Therefore, there isn't enough statistical evidence to show that the mean distance is not $300$. Therefore, the mean distance is not too different from $300$.
+
+For p-value test,
+\[p = 2^*P(t \geq t^*) = 0.116\]
+\[\alpha = 0.05\]
+\[\text{Since $p > \alpha$, we fail to reject the null hypothesis.}\]
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Hypothesis Testing}
+\begin{block}{Hypothesis Test}
+Proportion of distances travelled by people being $\leq 100$ is at least $25\%$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Hypothesis Testing : Null and Alternate Hypothesis}
+$$\text{Null Hypothesis}(H_0): p < p_0$$
+$$\text{Alternate Hypothesis}(H_a): p \geq p_0$$  
+To test the hypothesis, we can use a one-proportion test.
+\[ Z^* = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \]
+
+where:
+\begin{itemize}
+    \item $n = 158$; the number of samples
+    \item $\hat{p} = 0.335$ is the sample proportion
+    \item $p_0 = 0.25$ is the hypothesized proportion
+    \item $\alpha = 0.05$; the confidence coefficient
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Hypothesis Testing : Calculations}
+\large Using the above formula, we get :
+\[ Z* = 2.480\]
+\[ Z_{\alpha} = 1.645\]
+
+Since 
+\[ |Z^*| < |Z_{\alpha}|\],
+\[\text{We reject the null hypothesis.}\]
+
+For p-value test,
+\[p = P(t \geq t^*) = 0.007\]
+\[\alpha = 0.05\]
+\[\text{Since $p < \alpha$, we reject the null hypothesis.}\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of distance
+from college/residence}
+\framesubtitle{Result and Conclusion}
+\begin{block}{Result}
+The mean distance of attendees' college is not significantly different from 300.\\We can say with $95\%$ confidence that the proportion of people traveling less than 100 km is at least $25\%$
+\end{block}
+
+\begin{block}{Conclusion}
+The result of the hypothesis test indicates that at least a fourth of the population is within $100$ km. Thus this is a good radius to market the fest in.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of guest stay duration and college distance}
+\begin{block}{Abstract}
+In this section, we conduct an analysis to investigate the relationship between the duration of guest stays during our college fest and the distance they travel from. Our primary objective is to explore whether guests staying for 3 days come from farther away on average compared to those staying for 2 days.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of guest stay duration and college distance}
+\begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{AdityaCentral.png}
+    \captionof{figure}{Central tendencies}
+    \label{fig:enter-label}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of guest stay duration and college distance}
+\begin{block}{Hypothesis Test}
+Guests staying for $3$ days come from farther away on average compared to those that stay for $2$ days.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of guest stay duration and college distance}
+\framesubtitle{Null and Alternate Hypothesis}
+$$\text{Null Hypothesis}(H_0): \mu_1 - \mu_2 \le 0 $$
+$$\text{Alternate Hypothesis}(H_a): \mu_1 - \mu_2 > 0$$  \\
+\vspace{5mm}
+To test the hypothesis, we can use Welch’s t-test, which is appropriate when the variances of the two populations are unknown and unequal. The test statistic is given by :
+\[ t^* = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \]
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of guest stay duration and college distance}
+\framesubtitle{Null and Alternate Hypothesis}
+where:
+\begin{itemize}
+    \item $\bar{X}_1$ : Sample Mean of distances of people coming to stay for 3 days
+    \item $\bar{X}_2$ : Sample Mean of distances of people coming to stay for 2 days
+    \item $S_1$ : Sample SD for 3 days
+    \item $S_2$ : Sample SD for 2 days
+    \item $n_1$ : Number of samples for 3 days 
+    \item $n_2$ : Number of samples for 2 days
+    \item $\alpha = 0.05$; the confidence coefficient
+\end{itemize}
+
+The degrees of freedom for the above t-distribution is given by:
+\[ \text{df} = \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{\left(\frac{s_1^2}{n_1}\right)^2}{n_1 - 1} + \frac{\left(\frac{s_2^2}{n_2}\right)^2}{n_2 - 1}} \]
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of guest stay duration and college distance}
+\framesubtitle{Null and Alternate Hypothesis}
+\large Using the above formula, we get :
+\[ t^* = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \]
+\[ t^* = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \]
+\[ t^* = 1.82\]
+
+Also,
+\[t_{\alpha, df} = 1.67\] 
+
+Since 
+\[ t^* > t_{\alpha, df}\],
+\[\text{we have enough evidence to reject the null hypothesis.}\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of guest stay duration and college distance}
+\framesubtitle{Result and Conclusion}
+\begin{block}{Result}
+After conducting the hypothesis test, we find that in the case where the variances are assumed to be unequal the calculated value of the test statistic is $t = 1.83$, and the corresponding critical value $t_{\alpha}$ is $1.67$. 
+
+Since $t > t_{\alpha}$, we reject the null hypothesis. This suggests that there is evidence to support the idea that guests staying for 3 days come from farther away on average compared to those staying for 2 days.
+\end{block}
+
+\begin{block}{Conclusion}
+Based on the results of our analysis, we conclude that there is a significant difference in the distances traveled by guests staying for different durations during our fest. Understanding this relationship can inform our fest planning and accommodation arrangements to better cater to the needs of our guests.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preferences in Hostellers and Day
+Scholars}
+\begin{block}{Abstract}
+This section aims to investigate whether people who are hostellers are more likely to opt for accommodation than day scholars.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preferences in Hostellers and Day
+Scholars}
+\framesubtitle{Preparation of data}
+\begin{block}{Assumption}
+Found distance between residential address and college address. Created binary variable 'hosteller'. If the distance between the residential address and college address is more than 20, then assigned 1 (hosteller), otherwise 0 (non-hosteller).
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Preferences in Hostellers and Day Scholars}
+    \begin{figure}[ht]
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{SAK_DIST1.png}
+            \label{fig:a}
+        \end{minipage}
+        \hspace{0.5cm}
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{SAK_DIST2.png}
+            % \caption{Label for b}
+            \label{fig:b}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preferences in Hostellers and Day
+Scholars}
+\begin{block}{Hypothesis Test}
+People who are hostellers are more likely to opt for
+accommodation than day scholars
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preferences in Hostellers and Day
+Scholars}
+\framesubtitle{Null and Alternate Hypothesis}
+$$\text{Null Hypothesis}(H_0): p \le p_0 $$
+$$\text{Alternate Hypothesis}(H_a): p > p_0$$  
+To test the hypothesis, we can use a one-proportion test.
+\[ Z^* = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \]
+
+where:
+\begin{itemize}
+    \item $n$ : the number of samples
+    \item $\hat{p}$ : the sample proportion
+    \item $p_0 = 0.5$ : the hypothesized proportion
+    \item $\alpha = 0.05$ :  the confidence coefficient
+\end{itemize}
+We use $p_0 = 0.5$ since if the Hypothesis is true, then hostellers must be a majority.
+\end{frame}
+
+\begin{frame}
+\frametitle{Preferences in Hostellers and Day
+Scholars}
+\framesubtitle{Null and Alternate Hypothesis}
+\large Using the above formula, we get :
+\[ Z* = 2.307\]
+\[ Z_{\alpha} = 1.645\]
+
+Since 
+\[ |Z^*| > |Z_{\alpha}|\],
+\[\text{We reject the null hypothesis.}\]
+
+For p-value test,
+\[p = P(t \geq t^*) = 0.011\]
+\[\alpha = 0.05\]
+\[\text{Since $p < \alpha$, we reject the null hypothesis.}\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Preferences in Hostellers and Day
+Scholars}
+\framesubtitle{Result and Conclusion}
+\begin{block}{Result}
+As the test statistic is greater than the critical value and the p-value is less than
+the significance level $\alpha$, we reject the null hypothesis.
+\end{block}
+
+\begin{block}{Conclusion}
+Therefore, we conclude that people who are hostellers are more likely to opt for accommodation than day scholars. It may be beneficial to direct marketing towards hostellers.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\begin{block}{Abstract}
+This section presents an analysis of the effect of age on the duration of
+stay. We conducted hypothesis testing to determine if there is a significant difference in hotel stay duration between different age groups.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\begin{block}{Hypothesis Test}
+Determine if there is a significant difference in hotel stay duration between Group 1 and Group 2
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\framesubtitle{Null and Alternate Hypothesis}
+$$\text{Null Hypothesis}(H_0): \mu_1 - \mu_2 = 0$$
+$$\text{Alternate Hypothesis}(H_a): \mu_1 - \mu_2 \neq 0$$\\
+\vspace{5mm}
+Where $\mu_1$ represents the mean of the age group staying for 3 days and $\mu_2$ represents the mean of the age group staying for 2 days
+where:
+\\ \vspace{5mm}
+Now, we need to test the hypothesis in two conditions,
+\begin{itemize}
+    \item when both the variances are unequal and unknown.
+    \item when both the variances are equal but unknown.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\framesubtitle{Unequal and Unknown Variances}
+To test the hypothesis, we can use Welch’s t-test, which is appropriate when the variances of the two populations are unknown and unequal. The test statistic is given by :
+\[ t^* = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \]
+where:
+\begin{itemize}
+    \item $\bar{X}_1 = 18.7$ : Sample Mean of distances of people coming to stay for 3 days
+    \item $\bar{X}_2 = 19.03$ : Sample Mean of distances of people coming to stay for 2 days
+    \item $S_1 = 1.71$ : Sample SD for 3 days
+    \item $S_2 = 1.49$ : Sample SD for 2 days
+    \item $n_1 = 30$ : Number of samples for 3 days 
+    \item $n_2$ = 30: Number of samples for 2 days
+    \item $\alpha = 0.05$; the confidence coefficient
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\framesubtitle{Unequal and Unknown Variances}
+The degrees of freedom for the above t-distribution is given by:
+\[ \text{df} = \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{\left(\frac{s_1^2}{n_1}\right)^2}{n_1 - 1} + \frac{\left(\frac{s_2^2}{n_2}\right)^2}{n_2 - 1}} \]
+
+Using the above formula, we get :
+\[ t^* = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \]
+\[ |t^*| = 0.903\]
+\[|t_{\alpha/2, df}| = 2.003\] 
+
+Therefore, $ |t^*| < |t_{\alpha/2, df}$
+We fail to reject the null hypothesis.
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\framesubtitle{Unknown but Equal Variances}
+To test the hypothesis, we can use pooled t-test, which is appropriate when the variances of the two populations are unknown and equal. The test statistic is given by:
+\[ t^* = \frac{\bar{X}_1 - \bar{X}_2}{S_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \]
+
+where:
+\begin{itemize}
+    \item $\bar{X}_1 = 18.7$; Sample Mean of Sample 1
+    \item $\bar{X}_2 = 19.03$; Sample Mean of Sample 2
+    \item $S_p = 1.61$; Pooled Sample SD
+    \item $n_1 = 30$; Number of samples in Sample 1 
+    \item $n_2 = 30$; Number of samples in Sample 2
+    \item $\alpha = 0.05$; the confidence coefficient
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\framesubtitle{Unknown but Equal Variances}
+The degrees of freedom for the above t-distribution is given by:
+\[ \text{df} = n_1 + n_2 - 2\]
+Using the above formula, we get :
+\[ t^* = \frac{\bar{X}_1 - \bar{X}_2}{S_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}\]
+\[ t^* = -0.8\]
+\[ |t^*| = 0.8\]
+\[|t_{\alpha/2, df}| = 2.001\] 
+Since $|t^*| < |t_{\alpha/2, df}|$,\\
+\text{We fail to reject the null hypothesis.}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of the effect of age on
+stay duration}
+\framesubtitle{Result and Conclusion}
+\begin{block}{Result}
+The result of the hypothesis test indicates that there is no significant difference in the mean of age group that stays for 3 days and the one that stays for 2 days. Although we have a narrow interval of ages that visit the campus, there is not much distinction as to who stay longer.
+\end{block}
+
+\begin{block}{Conclusion}
+Our analysis indicates that age has no significant effect on stay duration. 
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of Accommodation of Private/Public Institutions}
+\begin{block}{Abstract}
+This section aims to investigate whether students from private institutions have a higher likelihood of opting for accommodation compared to students from public institutions in Telangana.
+\end{block}
+\end{frame}    
+
+\begin{frame}
+\frametitle{Analysis of Accommodation of Private/Public Institutions}
+\begin{figure}[ht]
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{public_central.png}
+            \caption{Central tendencies for public institutions}
+            
+            \label{fig:a}
+        \end{minipage}
+        \hspace{0.5cm}
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{pvt_central.png}
+            \caption{Central tendencies for private institutions}
+            \label{fig:b}
+        \end{minipage}
+    \end{figure}
+\end{frame} 
+
+\begin{frame}
+\frametitle{Analysis of Accommodation of Private/Public Institutions}
+\begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{seg1.png}
+    \captionof{figure}{Visual Representation of data for private and public institutions}
+    \label{fig:enter-label}
+\end{minipage}
+\end{frame} 
+
+\begin{frame}
+\frametitle{Analysis of Accommodation of Private/Public Institutions}
+\begin{block}{Hypothesis Test}
+Private Institutions have more chance of their students from the short range (in and around Telangana) to take accommodation than public institutions
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of Accommodation of Private/Public Institutions}
+\framesubtitle{Null and Alternate Hypothesis}
+$$\text{Null Hypothesis}(H_0): p_1 - p_2 \le 0 $$
+$$\text{Alternate Hypothesis}(H_a): p_1 - p_2  > 0$$  
+To test the hypothesis, we can use the two-proportions right tailed test. The test statistic is given by:
+\[
+Z^* = \frac{{\hat{p}_1 - \hat{p}_2 - p_0}}{{\sqrt{\frac{{\hat{p}_1(1-\hat{p}_1)}}{{n_1}} + \frac{{\hat{p}_2(1-\hat{p}_2)}}{{n_2}}}}}
+\]
+where
+\begin{itemize}
+    \item $\hat{p}_1 = 0.56410$; Sample Proportion 1
+    \item $\hat{p}_2 = 0.05$; Sample Proportion 2
+    \item $n_1 = 117$; Number of samples in Sample 1 
+    \item $n_2 = 40$; Number of samples in Sample 2
+    \item $\alpha = 0.05$; the confidence coefficient
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of Accommodation of Private/Public Institutions}
+\framesubtitle{Result and Conclusion}
+\begin{block}{Result}
+The p-value obtained from both proportion tests was below the significance level, indicating a rejection of the null hypothesis.
+\end{block}
+
+\begin{block}{Conclusion}
+Based on the analysis, it can be concluded that private institutions indeed have a
+significantly higher proportion of students from the short range opting for accommodation compared to public institutions in Hyderabad.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Final Conclusion}
+Based on the conclusions drawn from the above analyses:
+\begin{itemize}
+    \item \textbf{Accommodation Preference}: People who are hostellers are more likely to opt for accommodation than day scholars, as indicated by the rejection of the null hypothesis in the statistical analysis.
+    \item \textbf{Distance Traveled}: There is a significant difference in the distances traveled by guests staying for different durations during the fest. This suggests that understanding the geographical distribution of guests can inform fest planning and accommodation arrangements.
+    \item \textbf{Geographical Distribution}: Considering the geographical distribution of guests when planning fest activities and accommodations is recommended. Providing transportation options for guests traveling longer distances can enhance their fest experience and participation.
+    \item \textbf{Marketing Strategy}: A radius of 100 km is identified as effective for marketing the fest, as at least a fourth of the population falls within this distance.
+    \end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Final Conclusion}
+\begin{itemize}
+    \item \textbf{Institutional Differences}: Private institutions have a significantly higher proportion of students from the short range opting for accommodation compared to public institutions in Hyderabad.
+\end{itemize}
+Overall, based on these conclusions, it can be concluded that fest organizers should tailor their planning, accommodation arrangements, and marketing strategies to accommodate the preferences and geographical distribution of guests. Additionally, recognizing the differences between private and public institutions can help in targeted outreach and accommodation planning.
+\end{frame}
+
+\end{document}
+
